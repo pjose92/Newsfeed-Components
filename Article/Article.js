@@ -113,32 +113,32 @@ const data = [
 
 */
 
-function createData(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+function createDOM(title, date, firstParagraph, secondParagraph, thirdParagraph) {
 
   const article = document.createElement('div');
   const h2 = document.createElement('h2');
-  const dateP = document.createElement('p');
+  const theDate = document.createElement('p');
   const theFirstP = document.createElement('p');
-  const theSecond = document.createElement('p');
-  const theThird = document.createElement('p');
+  const theSecondP = document.createElement('p');
+  const theThirdP = document.createElement('p');
   const expandButton = document.createElement('span');
 
   article.classList.add('article');
-  dateAdded.classList.add('date');
+  theDate.classList.add('date');
   expandButton.classList.add('expandButton');
 
   article.appendChild(h2);
-  article.appendChild(dateP);
+  article.appendChild(theDate);
   article.appendChild(theFirstP);
-  article.appendChild(theSecond);
-  article.appendChild(theThird);
+  article.appendChild(theSecondP);
+  article.appendChild(theThirdP);
   article.appendChild(expandButton);
 
   h2.textContent = title;
-  dateAdded.textContent = date;
+  theDate.textContent = date;
   theFirstP.textContent = firstParagraph;
-  theSecond.textContent = secondParagraph;
-  theThird.textContent = thirdParagraph;
+  theSecondP.textContent = secondParagraph;
+  theThirdP.textContent = thirdParagraph;
   expandButton.textContent = "expand";
 
   expandButton.addEventListener('click', () => {
@@ -151,6 +151,6 @@ function createData(title, date, firstParagraph, secondParagraph, thirdParagraph
 const articles = document.querySelector('.articles');
 
 data.forEach(info => {
-  articles.appendChild(createData(info.title, info.date, info.firstParagraph,
+  articles.appendChild(createDOM(info.title, info.date, info.firstParagraph,
     info.secondParagraph, info.thirdParagraph));
 });
